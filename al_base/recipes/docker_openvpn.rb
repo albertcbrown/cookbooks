@@ -1,7 +1,5 @@
 # docker run --name $OVPN_DATA -v /etc/openvpn busybox
 
-include_recipe 'al_base::docker'
-
 docker_image 'kylemanna/openvpn' do
   tag 'latest'
   notifies :redeploy, 'docker_container[ovpn-server]'
