@@ -1,10 +1,9 @@
-execute "Update apt" do
-  user "root"
-  command "sudo echo 'deb https://repos.influxdata.com/ubuntu trusty stable' > /etc/apt/sources.list.d/influxdb.list"
-end
+# 684A14CF2582E0C5
 
-execute "Update apt" do
-  user "root"
-  ignore_failure true
-  command "sudo apt-get update"
+apt_repository "influxdb" do
+  uri 'https://repos.influxdata.com/ubuntu'
+  distribution node['lsb']['codename']
+  components ['stable']
+  keyserver 'hkp://keyserver.ubuntu.com:80'
+  key '684A14CF2582E0C5'
 end
