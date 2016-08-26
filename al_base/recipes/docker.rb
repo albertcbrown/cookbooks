@@ -1,3 +1,7 @@
+if node["platform"] == "ubuntu"
+  package "linux-image-extra-#{`uname -r`.strip}"
+end
+
 docker_service 'default' do
   host [ "tcp://0.0.0.0:2375", 'unix:///var/run/docker.sock' ]
   debug true
