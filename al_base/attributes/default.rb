@@ -27,10 +27,6 @@ default['elasticsearch']['path_data'] = '/usr/share/elasticsearch'
 default['logstash']['host'] = 'localhost'
 default['logstash']['port'] = '5100'
 
-
-      "default.replication.factor": 2,
-      "num.partitions": 6
-
 default['apache_kafka']['log_dir'] = '/data/kafka/logs'
 default['apache_kafka']['data_dir'] = '/data/kafka/data'
 default['apache_kafka']['zookeeper.connect'] = '127.0.0.1:2181'
